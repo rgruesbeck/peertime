@@ -50,9 +50,10 @@ const renderPeerList = (peers) => {
   q('#list').innerHTML = `<ul>${
     peers
       .map(peerId => {
-        let profile = state.peerMap.get(peerId)
-        return `<li>${profile && profile.nick || 'anonymous'}</li>`
-      })
+        let peer = state.peerMap.get(peerId)
+        let nick = peer.nick
+        return `<li>${nick || 'anonymous' }</li>`
+      }).join('')
   }</ul>`
 }
 
