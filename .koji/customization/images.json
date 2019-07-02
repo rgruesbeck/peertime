@@ -1,0 +1,21 @@
+{
+  "images": {
+    "logo": "https://i.imgur.com/JchtoH4.png"
+  },
+  "@@editor": [
+    {
+      "key": "images",
+      "name": "Images",
+      "icon": "🖼️",
+      "source": "images.json",
+      "fields": [
+        {
+          "key": "logo",
+          "name": "Logo Image",
+          "description": "Logo image",
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}

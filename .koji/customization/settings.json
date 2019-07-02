@@ -1,0 +1,26 @@
+{
+    "settings": {
+      "name": "Peer Chat",
+      "fontFamily": "Bungee Inline"
+    },
+    "@@editor": [
+      {
+        "key": "settings",
+        "name": "App settings",
+        "icon": "🎮",
+        "source": "settings.json",
+        "fields": [
+          {
+            "key": "name",
+            "name": "App name",
+            "type": "text"
+          },
+          {
+            "key": "fontFamily",
+            "name": "Font",
+            "type": "font"
+          }
+        ]
+      }
+    ]
+  }

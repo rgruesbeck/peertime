@@ -11,3 +11,7 @@ p2p chat with ipfs, wrtc, & rxjs
 - [ ] private messages
 - [ ] profiles
 - [ ] video call
+
+## uses
+- https://milligram.io/
+- https://rxjs-dev.firebaseapp.com/

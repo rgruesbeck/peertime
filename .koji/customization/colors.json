@@ -1,0 +1,33 @@
+{
+  "colors": {
+    "textColor": "grey",
+    "primaryColor": "purple",
+    "backgroundColor": "white"
+  },
+  "@@editor": [
+    {
+      "key": "colors",
+      "name": "Colors",
+      "icon": "💅",
+      "source": "colors.json",
+      "fields": [
+        {
+          "key": "textColor",
+          "name": "Text color",
+          "description": "Default color for text",
+          "type": "color"
+        },
+        {
+          "key": "primaryColor",
+          "name": "Primary Color",
+          "type": "color"
+        },
+        {
+          "key": "backgroundColor",
+          "name": "Background color",
+          "type": "color"
+        }
+      ]
+    }
+  ]
+}

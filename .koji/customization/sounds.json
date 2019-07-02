@@ -1,0 +1,21 @@
+{
+    "sounds": {
+      "notificationSound": "https://objects.koji-cdn.com/e5d1d25b-29a1-4df7-b9b7-534ae82f7bc2/buttonHeroSuccess2.mp3"
+    },
+    "@@editor": [
+      {
+        "key": "sounds",
+        "name": "Sounds",
+        "icon": "🔊️",
+        "source": "sounds.json",
+        "fields": [
+          {
+            "key": "notificationSound",
+            "name": "Notification Sound",
+            "description": "Sound for new message",
+            "type": "sound"
+          }
+        ]
+      }
+    ]
+  }
