@@ -1,0 +1,101 @@
+#app{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5em;
+    margin-bottom: -0.5em;
+}
+
+.nav .room {
+    flex: 1;
+}
+
+.nav .room #room {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav .nick {
+    width: 200px;
+}
+
+.nav .nick #nick {
+    border-left: 1px dotted #d1d1d1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.display {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5em;
+}
+
+#main {
+    flex: 1;
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px dotted #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    border-top-left-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+}
+
+#main:hover {
+    border: 1px solid #9b4dca;
+}
+
+#main ul {
+    list-style: none;
+}
+
+#main ul li {
+    margin: 0.25em;
+}
+
+#list {
+    height: 100%;
+    width: 200;
+    border-top: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    border-top-right-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+}
+
+#list:hover {
+    border: 1px solid #9b4dca;
+}
+
+#list ul {
+    list-style: none;
+}
+
+#list ul li {
+    margin: 0.25em;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5em;
+    box-shadow: 0 10px 10px -5px;
+}
+
+.input #input {
+    margin-left: 0.5em;
+    margin-right: 0.25em;
+}
+
+.input #submit {
+    margin-left: 0.25em;
+    margin-right: 0.75em;
+}

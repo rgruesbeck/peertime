@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peer Chat</title>
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="room">
+                <label for="room">Room</label>
+                <input id="room" placeholder="koji"></input>
+            </div>
+            <div class="nick">
+                <label for="nick">Nick</label>
+                <input id="nick" placeholder="anonymous"></input>
+            </div>
+        </div>
+        <div class="display">
+            <div id="main"></div>
+            <div id="list"></div>
+        </div>
+        <div class="input">
+            <input id="input" type="text" placeholder="post message"></input>
+            <button id="submit" class="button">Send</button>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

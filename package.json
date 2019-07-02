@@ -1,0 +1,25 @@
+{
+  "name": "chitchat",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "test": "npx standard index.js | npx standard-tap"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "dependencies": {
+    "ipfs": "^0.36.4",
+    "ipfs-pubsub-room": "^1.4.1",
+    "parcel-bundler": "^1.12.3",
+    "rxjs": "^6.5.2"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "standard-tap": "^1.0.4"
+  }
+}
