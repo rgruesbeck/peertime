@@ -64,15 +64,15 @@ const renderMessageThread = (messages) => {
         let peer = state.peerMap.get(message.id)
         let nick = peer && peer.nick
         return `
-	      <li>
-	        <span>${nick || 'anonymous'}: ${message.content.message}</span>
-	      </li>
-	    `
+          <li>
+            <span>${nick || 'anonymous'}: ${message.content.message}</span>
+          </li>
+        `
       }).join('')
-  }< /ul>`
+  }</ul>`
 }
 
-  const broadcast = (room, message) => {
+const broadcast = (room, message) => {
   room.broadcast(message)
 }
 
