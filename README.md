@@ -1,17 +1,16 @@
 # PeerTime
-p2p chat with ipfs, wrtc, & rxjs
+A simple serverless peer-to-peer chat app.
 
 ## todo
 - [X] fix render bug
+- [ ] code restructure
 - [ ] room switch
 - [ ] connecting indicator
+- [ ] add ipfs deploy to build
 - [ ] wrap room callbacks in observables
-- [ ] coder restructure
+- [ ] code restructure
 - [ ] broadcast join ping, handle pong
 - [ ] private messages
 - [ ] profiles
 - [ ] video call
-
-## uses
-- https://milligram.io/
-- https://rxjs-dev.firebaseapp.com/
+- [ ] encryption

@@ -41,7 +41,6 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0.5em;
-    height: 700px;
 }
 
 @media (max-width: 600px) {

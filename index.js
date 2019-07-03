@@ -4,40 +4,24 @@ import { fromEvent, merge } from 'rxjs'
 import { map, filter } from 'rxjs/operators'
 import { html, render } from 'lit-html'
 
+// ipfs instance
+import { ipfsConfig } from './config'
+const ipfs = new IPFS(ipfsConfig)
+
+// query helper
 const q = (selector) => document.querySelector(selector)
 
-const ipfs = new IPFS({
-  EXPERIMENTAL: {
-    pubsub: true
-  },
-  config: {
-    Addresses: {
-      Swarm: [
-        '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star'
-      ]
-    }
-  }
-})
-
+// state store
 const state = {
+  room: 'koji',
   messageThread: [],
   peerList: [],
   peerMap: new Map(),
   profile: {}
 }
 
-// post message events
-const postMessageButtonEvents = fromEvent(q('#submit'), 'click')
-const postMessageEnterEvents = fromEvent(q('#input'), 'keyup')
-  .pipe(
-    filter(event => event.code === 'Enter')
-  )
-
-const postMessageEvents = merge(
-  postMessageButtonEvents,
-  postMessageEnterEvents
-)
-
+// templates
+// peer list template
 const peerListTemplate = (peers) => {
   return html`${
     peers
@@ -49,6 +33,7 @@ const peerListTemplate = (peers) => {
   }`
 }
 
+// message thread template
 const messageThreadTemplate = (messages) => {
   return html`${
     messages
@@ -64,6 +49,19 @@ const messageThreadTemplate = (messages) => {
   }`
 }
 
+// post message event streams
+const postMessageButtonEvents = fromEvent(q('#submit'), 'click')
+const postMessageEnterEvents = fromEvent(q('#input'), 'keyup')
+  .pipe(
+    filter(event => event.code === 'Enter')
+  )
+
+const postMessageEvents = merge(
+  postMessageButtonEvents,
+  postMessageEnterEvents
+)
+
+// broadcast helpers
 const broadcast = (room, message) => {
   room.broadcast(message)
 }
@@ -82,6 +80,7 @@ const broadcastNickChange = (room, nick) => {
   }))
 }
 
+// ipfs ready
 ipfs.on('ready', () => {
   const room = Room(ipfs, 'koji')
 
