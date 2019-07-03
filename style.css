@@ -5,8 +5,8 @@ body {
 #app{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .nav {
@@ -41,14 +41,20 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0.5em;
+    height: 700px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .display {
         flex-direction: column;
     }
     #list {
         display: none;
+    }
+    #main {
+        border-right: 1px solid #d1d1d1;
+        border-top-right-radius: 0.25em;
+        border-bottom-right-radius: 0.25em;
     }
 }
 
@@ -60,7 +66,7 @@ body {
     border-bottom: 1px solid #d1d1d1;
     border-top-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 #main:hover {
@@ -73,6 +79,9 @@ body {
 
 #main ul li {
     margin: 0.25em;
+    background-color: #eee6ff;
+    padding: 1em;
+    border-radius: 0.5em;
 }
 
 #list {
@@ -82,7 +91,7 @@ body {
     border-bottom: 1px solid #d1d1d1;
     border-top-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 #list:hover {

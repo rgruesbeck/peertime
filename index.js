@@ -1,15 +1,8 @@
 import Room from 'ipfs-pubsub-room'
 import IPFS from 'ipfs'
-
-import {
-  fromEvent,
-  merge
-} from 'rxjs'
-
-import {
-  map,
-  filter
-} from 'rxjs/operators'
+import { fromEvent, merge } from 'rxjs'
+import { map, filter } from 'rxjs/operators'
+import { html, render } from 'lit-html'
 
 const q = (selector) => document.querySelector(selector)
 
@@ -45,32 +38,30 @@ const postMessageEvents = merge(
   postMessageEnterEvents
 )
 
-// render peers list
-const renderPeerList = (peers) => {
-  q('#list').innerHTML = `<ul>${
+const peerListTemplate = (peers) => {
+  return html`${
     peers
       .map(peerId => {
         let peer = state.peerMap.get(peerId)
         let nick = peer.nick
-        return `<li>${nick || 'anonymous' }</li>`
-      }).join('')
-  }</ul>`
+        return html`<li>${nick || 'anonymous' }</li>`
+      })
+  }`
 }
 
-// render chat thread
-const renderMessageThread = (messages) => {
-  q('#main').innerHTML = `<ul>${
+const messageThreadTemplate = (messages) => {
+  return html`${
     messages
       .map(message => {
         let peer = state.peerMap.get(message.id)
         let nick = peer && peer.nick
-        return `
+        return html`
           <li>
             <span>${nick || 'anonymous'}: ${message.content.message}</span>
           </li>
         `
-      }).join('')
-  }</ul>`
+      })
+  }`
 }
 
 const broadcast = (room, message) => {
@@ -106,7 +97,7 @@ ipfs.on('ready', () => {
       }
     })
 
-    renderPeerList(state.peerList)
+    render(peerListTemplate(state.peerList), q('#peer-list'))
     console.log('Peer joined the room', peerId)
   })
 
@@ -118,7 +109,7 @@ ipfs.on('ready', () => {
     // remove record from peer map
     state.peerMap.delete(peerId)
 
-    renderPeerList(state.peerList)
+    render(peerListTemplate(state.peerList), q('#peer-list'))
     console.log('Peer left...', peerId)
   })
 
@@ -140,7 +131,7 @@ ipfs.on('ready', () => {
         }
       ]
 
-      renderMessageThread(state.messageThread)
+      render(messageThreadTemplate(state.messageThread), q('#main-list'))
     }
 
     // handle handle nick change
@@ -150,7 +141,7 @@ ipfs.on('ready', () => {
         nick: payload.nick
       })
 
-      renderPeerList(state.peerList)
+      render(peerListTemplate(state.peerList), q('#peer-list'))
       console.log(state.peerList)
     }
   })

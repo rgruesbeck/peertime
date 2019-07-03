@@ -20,6 +20,7 @@
     "ipfs": "^0.36.4",
     "ipfs-pubsub-room": "^1.4.1",
     "koji-tools": "^0.5.1",
+    "lit-html": "^1.1.0",
     "parcel-bundler": "^1.12.3",
     "rxjs": "^6.5.2"
   },
