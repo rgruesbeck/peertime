@@ -13,7 +13,7 @@ const q = (selector) => document.querySelector(selector)
 
 // state store
 const state = {
-  room: 'koji',
+  room: 'peer-chat-test-room',
   messageThread: [],
   peerList: [],
   peerMap: new Map(),
@@ -82,7 +82,7 @@ const broadcastNickChange = (room, nick) => {
 
 // ipfs ready
 ipfs.on('ready', () => {
-  const room = Room(ipfs, 'koji')
+  const room = Room(ipfs, 'peer-chat-test-room')
 
   room.on('peer joined', (peerId) => {
     // add to peer list
