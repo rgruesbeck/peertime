@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "koji-tools watch &",
     "start": "npm run dev",
     "dev": "npx parcel index.html",
     "test": "npx standard index.js | npx standard-tap",
     "build": "npm run cleardist; npx parcel build index.html",
     "build:ipfs": "npm run cleardist; npx parcel build index.html --no-source-maps --public-url ./",
     "deploy:ipfs": "npm run build:ipfs; npx @agentofuser/ipfs-deploy dist",
-    "cleardist": "rm -rf dist/*",
-    "postbuild": "koji-tools pwa"
+    "cleardist": "rm -rf dist/*"
   },
   "author": "",
   "license": "ISC",
@@ -22,12 +20,11 @@
   "dependencies": {
     "ipfs": "^0.36.4",
     "ipfs-pubsub-room": "^1.4.1",
-    "koji-tools": "^0.5.1",
     "lit-html": "^1.1.0",
-    "parcel-bundler": "^1.12.3",
     "rxjs": "^6.5.2"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.4",
     "standard": "^12.0.1",
     "standard-tap": "^1.0.4"
   }
