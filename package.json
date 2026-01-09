@@ -18,7 +18,7 @@
     "last 2 Chrome versions"
   ],
   "dependencies": {
-    "ipfs": "^0.36.4",
+    "ipfs": "^0.66.1",
     "ipfs-pubsub-room": "^1.4.1",
     "lit-html": "^1.1.0",
     "rxjs": "^6.5.2"
